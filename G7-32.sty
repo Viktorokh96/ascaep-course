@@ -1,0 +1,207 @@
+% Лицензия GNU GPL v2 и совместимые
+%
+% Автор - Алексей Томин, с помощью списка рассылки latex-gost-request@ice.ru
+% Все вопросы, замечания и пожелания сюда: mailto:alxt@yandex.ru
+%
+% Дальнейшая разработка и поддержка - Михаил Конник,
+% связаться можно по адресу mydebianblog@gmail.com
+%
+\ProvidesPackage{G7-32}[2003/07/07 v1.00 Titles for GOST 7.32-2001]
+
+
+\newcommand\Nir@FirstHeader{{\small\CYRO\CYRT\CYRCH\CYRYO\CYRT}}
+\newcommand\Nir@Title{\CYRN\CYRA\CYRZ\CYRV\CYRA\CYRN\CYRI\CYRE{} \CYRO\CYRT\CYRCH\CYRYO\CYRT\CYRA}
+\newcommand\Nir@SecondHeader{\Nir@Title}
+\newcommand\Nir@MasterProgram{~}
+\newcommand\Nir@Confirm{~}
+\newcommand\Nir@Manager{~}
+\newcommand\Nir@Author{~}
+\newcommand\Nir@Supervisor{~}
+
+% Отчет о прикладных научных исследованиях
+\DeclareOption{appreport}{\renewcommand\Nir@FirstHeader{
+ {\small\CYRO\CYRT\CYRCH\CYRYO\CYRT\\ \CYRO{} \CYRP\CYRR\CYRI\CYRK\CYRL\CYRA\CYRD\CYRN\CYRERY\CYRH{} \CYRN\CYRA\CYRU\CYRCH\CYRN\CYRERY\CYRH{} \CYRI\CYRS\CYRS\CYRL\CYRE\CYRD\CYRO\CYRV\CYRA\CYRN\CYRI\CYRYA\CYRH}
+}}
+% Отчет о научно-исследовательской работе
+\DeclareOption{scireport}{\renewcommand\Nir@FirstHeader{
+ {\small\CYRO\CYRT\CYRCH\CYRYO\CYRT\\ \CYRO{} \CYRN\CYRA\CYRU\CYRCH\CYRN\CYRO-\CYRI\CYRS\CYRS\CYRL\CYRE\CYRD\CYRO\CYRV\CYRA\CYRT\CYRE\CYRL\CYRSFTSN\CYRS\CYRK\CYRO\CYRISHRT{} \CYRR\CYRA\CYRB\CYRO\CYRT\CYRE}
+}}
+% Диссертация на соискание степени магистра по направлению
+\DeclareOption{masterthes}{\renewcommand\Nir@SecondHeader{
+ {\small\CYRD\CYRI\CYRS\CYRS\CYRE\CYRR\CYRT\CYRA\CYRC\CYRI\CYRYA\\}\cyrn\cyra{} \cyrs\cyro\cyri\cyrs\cyrk\cyra\cyrn\cyri\cyre{} \cyrs\cyrt\cyre\cyrp\cyre\cyrn\cyri{} \cyrm\cyra\cyrg\cyri\cyrs\cyrt\cyrr\cyra\\
+ \cyrp\cyro{} \cyrn\cyra\cyrp\cyrr\cyra\cyrv\cyrl\cyre\cyrn\cyri\cyryu{} \cyrp\cyro\cyrd\cyrg\cyro\cyrt\cyro\cyrv\cyrk\cyri\\
+ \Nir@MasterProgram}
+ \renewcommand\Nir@FirstHeader{\Nir@Title}
+% \renewcommand\Nir@Confirm{\begin{flushright}\CYRN\cyra{} \cyrp\cyrr\cyra\cyrv\cyra\cyrh{} \cyrr\cyru\cyrk\cyro\cyrp\cyri\cyrs\cyri\end{flushright}}
+}
+% Выпускная работа на квалификацию бакалавра по направлению
+\DeclareOption{bachelor}{\renewcommand\Nir@SecondHeader{
+ {\small\CYRV\CYRERY\CYRP\CYRU\CYRS\CYRK\CYRN\CYRA\CYRYA{} \CYRR\CYRA\CYRB\CYRO\CYRT\CYRA\\}\cyrn\cyra{} \cyrk\cyrv\cyra\cyrl\cyri\cyrf\cyri\cyrk\cyra\cyrc\cyri\cyryu{} \cyrb\cyra\cyrk\cyra\cyrl\cyra\cyrv\cyrr\cyra\\
+ \cyrp\cyro{} \cyrn\cyra\cyrp\cyrr\cyra\cyrv\cyrl\cyre\cyrn\cyri\cyryu{} \cyrp\cyro\cyrd\cyrg\cyro\cyrt\cyro\cyrv\cyrk\cyri\\
+ \Nir@MasterProgram}
+ \renewcommand\Nir@FirstHeader{\Nir@Title}
+% \renewcommand\Nir@Confirm{\begin{flushright}\CYRN\cyra{} \cyrp\cyrr\cyra\cyrv\cyra\cyrh{} \cyrr\cyru\cyrk\cyro\cyrp\cyri\cyrs\cyri\end{flushright}}
+}
+% Дипломная работа на квалификацию инженера по специальности
+\DeclareOption{diploma}{\renewcommand\Nir@SecondHeader{
+ {\small\CYRD\CYRI\CYRP\CYRL\CYRO\CYRM\CYRN\CYRA\CYRYA{} \CYRR\CYRA\CYRB\CYRO\CYRT\CYRA\\}\cyrn\cyra{} \cyrk\cyrv\cyra\cyrl\cyri\cyrf\cyri\cyrk\cyra\cyrc\cyri\cyryu{} \cyri\cyrn\cyrzh\cyre\cyrn\cyre\cyrr\cyra{}
+ \cyrp\cyro{} \cyrs\cyrp\cyre\cyrc\cyri\cyra\cyrl\cyrsftsn\cyrn\cyro\cyrs\cyrt\cyri\\
+ \Nir@MasterProgram}
+ \renewcommand\Nir@FirstHeader{\Nir@Title}
+% \renewcommand\Nir@Confirm{\begin{flushright}\CYRN\cyra{} \cyrp\cyrr\cyra\cyrv\cyra\cyrh{} \cyrr\cyru\cyrk\cyro\cyrp\cyri\cyrs\cyri\end{flushright}}
+}
+% Курсовая работа
+\DeclareOption{coursreport}{\renewcommand\Nir@SecondHeader{
+ {\small\CYRK\CYRU\CYRR\CYRS\CYRO\CYRV\CYRA\CYRYA{} \CYRR\CYRA\CYRB\CYRO\CYRT\CYRA\\}
+ \Nir@MasterProgram}
+ \renewcommand\Nir@FirstHeader{\Nir@Title}
+% \renewcommand\Nir@Confirm{\begin{flushright}\CYRN\cyra{} \cyrp\cyrr\cyra\cyrv\cyra\cyrh{} \cyrr\cyru\cyrk\cyro\cyrp\cyri\cyrs\cyri\end{flushright}}
+}
+% Курсовой проект по дисциплине
+\DeclareOption{projreport}{\renewcommand\Nir@SecondHeader{
+ {\small\CYRK\CYRU\CYRR\CYRS\CYRO\CYRV\CYRO\CYRISHRT{} \CYRP\CYRR\CYRO\CYRE\CYRK\CYRT\\} \cyrp\cyro{} \cyr\cyrd\cyri\cyrs\cyrc\cyri\cyrp\cyrl\cyri\cyrn\cyre\\
+ \Nir@MasterProgram}
+ \renewcommand\Nir@FirstHeader{\Nir@Title}
+% \renewcommand\Nir@Confirm{\begin{flushright}\CYRN\cyra{} \cyrp\cyrr\cyra\cyrv\cyra\cyrh{} \cyrr\cyru\cyrk\cyro\cyrp\cyri\cyrs\cyri\end{flushright}}
+}
+% Отчет (по практике)
+\DeclareOption{report}{\renewcommand\Nir@SecondHeader{
+ {\small\CYRO\CYRT\CYRCH\CYRYO\CYRT\\}
+ \Nir@MasterProgram}
+ \renewcommand\Nir@FirstHeader{\Nir@Title}
+% \renewcommand\Nir@Confirm{\begin{flushright}\CYRN\cyra{} \cyrp\cyrr\cyra\cyrv\cyra\cyrh{} \cyrr\cyru\cyrk\cyro\cyrp\cyri\cyrs\cyri\end{flushright}}
+}
+\ProcessOptions
+
+% Поле для подписи
+\newcommand\datefield{<<\underline{\phantom{ЖЖ}}>> \underline{\phantom{ЖЖЖЖ}} {\number\year} \cyrg.}
+\newcommand\signfield[2]{{#1}\newline\underline{\phantom{ЖЖЖЖЖ}}~{#2}\newline\datefield\vspace{5mm}\newline}
+
+%стандартные части
+\newcommand\Executors{%список исполнителей
+ \chapter*{\CYRS\CYRP\CYRI\CYRS\CYRO\CYRK~%
+           \CYRI\CYRS\CYRP\CYRO\CYRL\CYRN\CYRI\CYRT\CYRE\CYRL\CYRE\CYRISHRT}%
+}
+\newcommand\Referat{%реферат
+ \chapter*{\CYRR\cyre\cyrf\cyre\cyrr\cyra\cyrt}%
+}
+\addto\captionsrussian{%содержание
+ \def\contentsname{%
+  \CYRS\cyro\cyrd\cyre\cyrr\cyrzh\cyra\cyrn\cyri\cyre}%
+}
+\newenvironment{abstract}{%То же самое, только как у белых людей -- Коротков И.
+ \Referat
+}{}
+\newcommand\NormRefs{%нормативные ссылки
+ \chapter*{\CYRN\cyro\cyrr\cyrm\cyra\cyrt\cyri\cyrv\cyrn\cyrery\cyre{} \cyrs\cyrs\cyrery\cyrl\cyrk\cyri}
+}
+\newcommand\Defines{%определения
+ \chapter*{\CYRO\cyrp\cyrr\cyre\cyrd\cyre\cyrl\cyre\cyrn\cyri\cyrya}%
+}
+\newcommand\Abbreviations{%обозначения и сокращения
+ \chapter*{\CYRO\cyrb\cyro\cyrz\cyrn\cyra\cyrch\cyre\cyrn\cyri\cyrya{} \cyri{} \cyrs\cyro\cyrk\cyrr\cyra\cyrshch\cyre\cyrn\cyri\cyrya}
+}
+\newcommand\Introduction{%введение
+ \chapter{\CYRV\cyrv\cyre\cyrd\cyre\cyrn\cyri\cyre}%
+}
+\newcommand\Conclusion{%заключение
+ \chapter{\CYRZ\cyra\cyrk\cyrl\cyryu\cyrch\cyre\cyrn\cyri\cyre}%
+}
+\addto\captionsrussian{%список использованных источников
+ \def\bibname{%
+  \CYRS\cyrp\cyri\cyrs\cyro\cyrk{} \cyri\cyrs\cyrp\cyro\cyrl\cyrsftsn\cyrz\cyro\cyrv\cyra\cyrn\cyrn\cyrery\cyrh{} \cyri\cyrs\cyrt\cyro\cyrch\cyrn\cyri\cyrk\cyro\cyrv}
+}
+
+%Элементы оформления титульной страницы
+\newcommand\Nir@UdkName{~} %% УДК
+\newcommand\Nir@No{~} %% No госрегистрации
+\newcommand\Nir@InventarNo{~} %% Инвентарный номер
+
+% \NirConfirm{\signfield{Boss position}{Boss name}}
+% Гриф "УТВЕРЖДАЮ", указывается должность и ФИО начальника
+\newcommand\NirConfirm[1]{\renewcommand\Nir@Confirm{
+\centering\small\CYRU\CYRT\CYRV\CYRE\CYRR\CYRZH\CYRD\CYRA\CYRYU\newline
+#1}
+}
+
+% \NirManager{\signfield{Boss position}{Boss name}}
+% Руководитель работы
+\newcommand\NirManager[1]{\renewcommand\Nir@Manager{#1}}
+
+% \NirAuthor{\signfield{Position}{Name}}
+% Автор работы
+\newcommand\NirAuthor[1]{\renewcommand\Nir@Author{#1}}
+
+% \NirSupervisor{\signfield{Position}{Name}}
+% Научный руководитель (консультант)
+\newcommand\NirSupervisor[1]{\renewcommand\Nir@Supervisor{#1}}
+
+
+\newcommand\Nir@OrgLongName{%
+ \CYRP\cyro\cyrl\cyrn\cyro\cyre~
+ \cyrn\cyra\cyrz\cyrv\cyra\cyrn\cyri\cyre~
+ \cyro\cyrr\cyrg\cyra\cyrn\cyri\cyrz\cyra\cyrc\cyri\cyri%
+}
+
+\newcommand\Nir@StageNo{ % номер этапа работ
+}
+
+\newcommand\Nir@StageTitle{ % заголовок этапа работ
+}
+\newcommand\Nir@StageType{ % вид отчёта
+}
+
+\newcommand\Nir@Year{\the\year}
+\newcommand\Nir@Town{\CYRG\cyro\cyrr\cyro\cyrd}
+
+\newcommand\NirTitle[2]{
+ \renewcommand\Nir@Title{#1}
+ \renewcommand\Nir@MasterProgram{#2}
+ \thispagestyle{empty}
+ \begin{centering}
+  \linespread{1.1}\normalsize
+  {\Nir@OrgLongName}
+
+  \vfill
+  \begin{tabular}{p{80mm}p{80mm}}
+    \Nir@UdkName \newline
+    \Nir@No \newline
+    \Nir@InventarNo \newline
+   &
+    \Nir@Confirm
+  \end{tabular}
+  \vfill
+
+\Nir@FirstHeader
+
+\vspace{8mm}
+\Nir@SecondHeader
+\vspace{8mm}
+
+\Nir@StageTitle 
+
+\Nir@StageType
+
+\Nir@StageNo
+
+
+  \vspace{10mm}
+  \begin{tabular}{p{80mm}p{80mm}}
+    \Nir@Manager & \Nir@Author \newline \Nir@Supervisor
+  \end{tabular}
+  \vfill
+  \Nir@Town~\Nir@Year
+
+ \end{centering}
+ \linespread{\Gost@LineSpread}\normalsize
+}
+
+%Эти команды нужно вызвать для корректного определения титульной страницы
+
+\newcommand\NirStage[3]{\renewcommand\Nir@StageNo{#1}\renewcommand\Nir@StageType{(#2)}\renewcommand\Nir@StageTitle{#3}} %% этап
+\newcommand\NirOrgLongName[1]{\renewcommand\Nir@OrgLongName{#1}}
+\newcommand\NirYear[1]{\renewcommand\Nir@Year{#1}}
+\newcommand\NirTown[1]{\renewcommand\Nir@Town{#1}} %% указываем город написания отчёта
+\newcommand\NirUdk[1]{\renewcommand\Nir@UdkName{#1}} %% для изменения УДК в тексте документа
+\newcommand\NirGosNo[1]{\renewcommand\Nir@No{#1}} %% номер госрегистрации
+\newcommand\NirInventarNo[1]{\renewcommand\Nir@InventarNo{#1}} %%инвентарный номер
