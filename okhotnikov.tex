@@ -1,4 +1,4 @@
-\documentclass[utf8,14pt, coursreport]{G7-32}
+\documentclass[utf8x,14pt, coursreport]{G7-32}
 % masterthes -- диссертация магистра
 % diploma -- дипломная работа инженера
 % bachelor -- квалификационная работа бакалавра
@@ -13,6 +13,12 @@
 %\usepackage{bookmark}
 \usepackage{titletoc}
 
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+\usepackage{listings}
+
+\lstloadlanguages{C, [ANSI]C++}
+
 \usepackage[colorlinks=true, citecolor=blue, bookmarksopen=true]{hyperref}
 
 % additional packages
@@ -25,6 +31,34 @@
 \usepackage{array}
 \usepackage{graphicx}
 
+\usepackage{color}
+
+\definecolor{greencomments}{rgb}{0, 0.3, 0}
+\definecolor{redstrings}{rgb}{0.8, 0.0, 0}
+\definecolor{orangekeys}{rgb}{0.0, 0.2, 0.8}
+
+% Определим свой цветовой стиль для листинга программ
+\lstdefinestyle{cstyle}{
+	commentstyle=\color{greencomments},
+	stringstyle=\color{redstrings},
+	basicstyle=\footnotesize,
+	keywordstyle=\color{orangekeys},
+	extendedchars=true,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	captionpos=t,
+	basicstyle=\ttfamily,
+	tabsize=2
+}
+
+% Устновка текущего стиля листинга
+\lstset{style=cstyle}	
 
 % avsolov: 2014-11-13: Не используйте \url{} внутри BIB!
 % Это приводит к ошибке: TeX capacity exceeded, sorry [input stack size=5000]
@@ -70,8 +104,9 @@
 \item Клиент
 \item Сервер
 \item УСПД
-\item Принципиальная схема
+\item КУСД
 \item USART
+\item SPI
 \item CAN
 \item Ethernet
 \end{itemize}
@@ -83,6 +118,7 @@
 
 \begin{description}
 \item[ПО] Программное обеспечение.
+\item[OC] Операционная система.
 \item[МК] Микроконтроллер.
 \item[УСПД] Устройство сбора и передачи данных.
 \item[КУСД] Контроллер удаленного сбора данных.
@@ -97,7 +133,7 @@
 \Introduction
 Автоматизация сбора, обработки и выдачи информации в настоящее время широко используется в самых различных сферах человеческой деятельности. Можно выделить одну из таких целей автоматизации, как повышение качества управления объектами и процессами за счет оперативного предоставления операторам информации в требуемые сроки и форме, удобной для анализа. Также автоматизация способствует уменьшению влияния человеческого фактора и, как следствие, снижение вероятности аварий. Электрические сети ~--- один из объектов внедрения автоматизированных систем.
 
-В связи с тем, что все процессы, возникающие в электросетях, протекают мгновенно и могут быть только зафиксированы, но не измерены напрямую, задача определения показателей качества электрической энергии не является простой. Расчитывать и выдавать объективное заключение необходимо только по статистически обработанным результатам. Очевидно, что для точного определения показателей качества электрической энергии необходимо непрерывно осуществлять наблюдение, выполнять большой объем измерений, причём с очень высокой скоростью, а также параллельно выполнять математическую и статистическую обработку получаенных данных.\cite{qualitymonitor}
+В связи с тем, что все процессы, возникающие в электросетях, протекают мгновенно и могут быть только зафиксированы, но не измерены напрямую, задача определения показателей качества электрической энергии не является простой. Расcчитывать и выдавать объективное заключение необходимо только по статистически обработанным результатам. Очевидно, что для точного определения показателей качества электрической энергии необходимо непрерывно осуществлять наблюдение, выполнять большой объем измерений, причём с очень высокой скоростью, а также параллельно выполнять математическую и статистическую обработку получаемых данных.\cite{qualitymonitor}
 
 Целью данной работы является разработка контроллера, способного получать данные о состоянии электрических сетей с последующей передачей на удаленный сервер.
 
@@ -157,7 +193,11 @@
 
 \bibitem{atmegainfo} ATmega328/P Datasheet / Atmel [Электронный ресурс] ~--- Режим доступа: http://www.atmel.com/Images/Atmel-42735-8-bit-AVR-Microcontroller-ATmega328-328P\_Datasheet.pdf --- (дата последнего обращения: 14.05.2017)
 
+\bibitem{arduino} Arudino Uno / Амперка [Электронный ресурс] ~--- Режим доступа: http://amperka.ru/product/arduino-uno --- (дата последнего обращения: 14.05.2017)
+
 \bibitem{enc28j60datasheet} ENC28J60 Datasheet / Microchip  [Электронный ресурс] ~--- Режим доступа: http://ww1.microchip.com/downloads/en/devicedoc/39662a.pdf --- (дата последнего обращения: 14.05.2017)
+
+\bibitem{avrtoolchain} The AVR GCC Toolchain / Sourceforge [Электронный ресурс] ~--- Режим доступа: http://avr-eclipse.sourceforge.net/wiki/index.php/The\_AVR\_GCC\_Toolchain --- (дата последнего обращения: 14.05.2017)
 
 \end{thebibliography}
 
@@ -168,6 +208,8 @@
 \appendix
 
 \chapter{Исходные тексты программ}
+
+\small{\lstinputlisting[language=C, caption=main.c, inputencoding=cp1251]{./src/main.c}}
 
 %-------------------------------------------------------------->> КОНЕЦ
 
