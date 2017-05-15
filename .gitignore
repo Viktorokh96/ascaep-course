@@ -2,3 +2,5 @@
 *.toc
 *.log
 *.pdf
+*.swp
+*.out
