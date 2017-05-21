@@ -292,7 +292,5 @@ int main(void)
     			state = POLLING;
     		break;
     	}
-
-		//send_udp_garbage( inet_addr(192, 168, 0, 107), htons(53), htons(123) );
     }
 }

@@ -16,6 +16,7 @@
 \usepackage{verbatim}
 \usepackage{fancyvrb}
 \usepackage{listings}
+\usepackage{listingsutf8}
 
 \lstloadlanguages{C, [ANSI]C++}
 
@@ -219,7 +220,8 @@
 
 \chapter{Исходные тексты программ}
 
-\small{\lstinputlisting[language=C, caption=main.c, inputencoding=cp1251]{./src/main.c}}
+% range output - [firstline=*num*, lastline=*num*] or [linerange={(first1)-(last1), (first2)-(last2), ...}
+{\small{\lstinputlisting[language=C, caption=main.c, inputencoding=cp1251]{./src/main.c}}}
 
 %-------------------------------------------------------------->> КОНЕЦ
 
