@@ -51,7 +51,7 @@ uint8_t send_udp_test(uint32_t dst_ip, uint16_t src_port, uint16_t dst_port)
 	ip_packet_t *ip = (void *) (frame->data);
 	udp_packet_t *udp = (void *) (ip->data);
 	uint8_t *data = (void *) (udp->data);
-	uint8_t msg[] = "Hello! I'm MCU! How is you?\n";
+	uint8_t msg[] = "Hello! I'm MCU!\n";
 
 	ip->to_addr = dst_ip;
 	udp->to_port = dst_port;

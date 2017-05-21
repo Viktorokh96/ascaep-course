@@ -1,4 +1,4 @@
-\documentclass[utf8x,14pt, coursreport]{G7-32}
+\documentclass[utf8x,12pt, coursreport]{G7-32}
 % masterthes -- диссертация магистра
 % diploma -- дипломная работа инженера
 % bachelor -- квалификационная работа бакалавра
@@ -190,6 +190,8 @@
 
 \bibitem{tcpip} Стек протоколов TCP/IP / CITFORUM. Введение в IP сети. [Электронный ресурс] ~--- Режим доступа: http://citforum.ru/nets/ip/glava\_2.shtml --- (дата последнего обращения: 13.05.2017)
 
+\bibitem{ip} Сетевые технологии в распределённых информарционных системах : маршрутизация : учеб.пособие для студентов / А.~П.~Мощевикин, А.~В.~Соловьев. --- Петрозаводск : Изд-во ПетрГУ, 2014. ---71~с.
+
 \bibitem{arp} ARP [Электронный ресурс] ~--- Режим доступа: http://xgu.ru/wiki/ARP --- (дата последнего обращения: 13.05.2017)
 
 \bibitem{arpcitforum}  Протокол ARP  / CITFORUM. Введение в IP сети. [Электронный ресурс] ~--- Режим доступа: http://citforum.ru/nets/tcpip/arp.shtml --- (дата последнего обращения: 13.05.2017)
@@ -221,7 +223,7 @@
 \chapter{Исходные тексты программ}
 
 % range output - [firstline=*num*, lastline=*num*] or [linerange={(first1)-(last1), (first2)-(last2), ...}
-{\small{\lstinputlisting[language=C, caption=main.c, inputencoding=cp1251]{./src/main.c}}}
+{\small{\lstinputlisting[language=C, caption=main.c\label{lst:main}, inputencoding=cp1251]{./src/main.c}}}
 
 %-------------------------------------------------------------->> КОНЕЦ
 

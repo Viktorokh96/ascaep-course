@@ -123,11 +123,11 @@ typedef struct icmp_echo_packet {
  */
 
 typedef struct udp_packet {
-	uint16_t from_port;
-	uint16_t to_port;
-	uint16_t len;
-	uint16_t cksum;
-	uint8_t data[];
+	uint16_t from_port;		/* Порт источника */
+	uint16_t to_port;		/* Порт назначения */
+	uint16_t len;			/* Длина UDP пакета */
+	uint16_t cksum;			/* Контрольная сумма UDP заголовка */
+	uint8_t data[];			/* Данные */
 } udp_packet_t;
 
 
